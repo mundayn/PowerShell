@@ -189,10 +189,6 @@ $Script = {
                 $VulnerableRemote = "Unknown"
             }
 
-            $OMIVersion_BAD
-            $VulnerableRemote
-
-
             # Create entry for report
             $ReportLine = [PSCustomObject]@{
                 VMName = $VM.Name
