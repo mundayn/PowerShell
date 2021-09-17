@@ -19,6 +19,8 @@
     The script should do the rest once logged in
 
     The output will be in C:\temp\omigod in .csv format
+    
+PLEASE NOTE: I am not a Linux engineer, I assume the commands to be safe, but I do not know how every Linux machine will react to this!!!
 
 #>
 
