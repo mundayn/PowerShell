@@ -19,8 +19,6 @@
     The script should do the rest once logged in
 
     The output will be in C:\temp\omigod in .csv format
-    
-PLEASE NOTE: I am not a Linux engineer, I assume the commands to be safe, but I do not know how every Linux machine will react to this!!!
 
 #>
 
@@ -182,14 +180,15 @@ $Script = {
             # If listening and running a bad version, set vulnerable to remote
             IF (($OMIhttpListening -eq $TRUE -or $OMIhttpsListening -eq $TRUE) -and ($OMIVersion_BAD -eq $TRUE)) {
                 $VulnerableRemote = $TRUE
-            } ELSE {
+            } ELSEIF (($OMIhttpListening -eq $FALSE -or $OMIhttpsListening -eq $FALSE) -or ($OMIVersion_BAD -eq $FALSE)) {
                 $VulnerableRemote = $FALSE
+            } ELSE {
+                $VulnerableRemote = "Unknown"
             }
 
-            IF ($OMIVersion_BAD -eq "Unknown") {
-                $VulnerableRemote = "Unknown"
-                $VulnerableRemote = "Unknown"
-            }
+            $OMIVersion_BAD
+            $VulnerableRemote
+
 
             # Create entry for report
             $ReportLine = [PSCustomObject]@{
