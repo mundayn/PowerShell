@@ -20,6 +20,9 @@
 
     The output will be in C:\temp\omigod in .csv format
 
+.WARNING
+    Please note I am not a Linux expert, I don't know if these commands run will cause any damage. I assume not, but run at your own risk.
+
 #>
 
 # Create log dir
